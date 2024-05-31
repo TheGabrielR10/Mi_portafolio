@@ -1,0 +1,301 @@
+/* Estilos generales */
+body {
+    font-family: 'Helvetica', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    position: fixed; /* Fija el menú en la parte superior */
+    top: 0px; /* Posiciona el menú en la parte superior de la ventana */
+    width: 100%; /* Ancho completo */
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 30px; /* ancho de los espacio entre los nombres*/
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px; /* Añade espacio alrededor del texto */
+    border-radius: 5px; /* Añade bordes redondeados */
+    transition: background-color 0.3s; /* Agrega transición suave */
+}
+/* Efecto al pasar el mouse */
+nav ul li a:hover {
+    background-color: #7b8187; /* Cambia el color de fondo al pasar el mouse */
+}
+
+nav ul li a.active { /* Muestra la seccion activa de la pagina */
+    background-color: #007bff; /* Color azul claro */
+    color: #fff; /* Texto blanco */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+section {
+    padding: 2px 0;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Estilos específicos */
+#inicio {
+    position: relative;
+    height: 100vh; /* Altura de la ventana gráfica */
+    overflow: hidden;
+    text-align: center;
+    color: #fff; /* color del texto de inicio*/
+}
+
+#inicio .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#inicio .background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+    z-index: 1;
+}
+#inicio .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 2;
+}
+#inicio h2,
+#inicio h3 {
+    margin: 0;
+    z-index: 3;
+}
+
+/* Añadir el difuminado al borde inferior */
+#inicio .background-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Ajusta la altura del difuminado */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    z-index: 2;
+}
+
+#sobre-mi {
+    background-color: rgb(249, 249, 249);
+}
+.Text_Sobremi {
+    text-align: justify;
+}
+
+/* Estilos específicos para la imagen de gabriel */
+.image-container {
+    position: relative;
+    width: 300px; /* Ancho deseado */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    
+}
+
+.image-container img {
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Altura del difuminado */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(249, 249, 249)); /* Difuminado blanco */
+}
+
+#formacion ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#formacion ul li {
+    margin-bottom: 0px;
+}
+
+#formacion ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuye uniformemente las imágenes en el contenedor */
+}
+
+#formacion ul li {
+    width: 30%; /* Establece el ancho de cada elemento al 30% del contenedor */
+    margin-bottom: 20px; /* Espacio entre las filas */
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+#formacion ul li img {
+    width: 80px; /* Dimensiones de las imágenes */
+    height: 80px;
+}
+
+
+/* luz en formacion*/
+#formacion ul li {
+    position: relative; /* Establece la posición relativa para que los pseudo-elementos sean relativos a este elemento */
+    width: 30%; /* Establece el ancho de cada elemento al 30% del contenedor */
+    margin-bottom: 20px; /* Espacio entre las filas */
+    text-align: center; /* Centra el contenido horizontalmente */
+    overflow: hidden; /* Oculta el desbordamiento para que los pseudo-elementos no se muestren */
+}
+
+#formacion ul li::before,
+#formacion ul li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.5); /* Color azul neon con transparencia */
+    z-index: -1; /* Coloca los pseudo-elementos detrás de la imagen */
+    transition: transform 0.5s linear; /* Agrega una transición suave */
+}
+
+#formacion ul li::before {
+    left: -100%; /* Coloca el pseudo-elemento ::before fuera del elemento */
+}
+
+#formacion ul li::after {
+    right: -100%; /* Coloca el pseudo-elemento ::after fuera del elemento */
+}
+
+#formacion ul li img {
+    position: relative; /* Establece la posición relativa para que los pseudo-elementos sean relativos a la imagen */
+    z-index: 1; /* Coloca la imagen encima de los pseudo-elementos */
+}
+
+#formacion ul li:hover::before,
+#formacion ul li:hover::after {
+    transform: translateY(-100%); /* Desplaza los pseudo-elementos hacia arriba */
+}
+
+#formacion ul li:hover img {
+    filter: brightness(50%); /* Ajusta el brillo de la imagen al pasar el mouse */
+}
+
+
+
+/* Estilos específicos para la tabla de experiencia */
+table.experiencia {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+table.experiencia th, 
+table.experiencia td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table.experiencia th {
+    background-color: #333;
+    color: #fff;
+}
+
+table.experiencia tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table.experiencia tbody tr {
+    transition: transform 0.3s, background-color 0.3s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+table.experiencia tbody tr:hover {
+    background-color: #ddd;
+    transform: rotateY(15deg);
+}
+
+/* Quitar el pseudo-elemento ::after y los efectos relacionados */
+table.experiencia tbody tr::after {
+    display: none;
+}
+
+table.experiencia td:hover::after {
+    display: none;
+}
+
+#contacto {
+    text-align: center;
+}
+
+/* Estilos para enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+    text-align: center
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
