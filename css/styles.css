@@ -281,6 +281,22 @@ table.experiencia td:hover::after {
     text-align: center;
 }
 
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-media a img:hover {
+    transform: scale(1.2);
+}
+
 /* Estilos para enlaces */
 a {
     color: #007bff;
